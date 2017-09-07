@@ -17,7 +17,13 @@
 #this_total_days_per_mo3,
 #this_tot_mo_fax_cost,
 #this_tot_courier_cost {    color: red;}
-.heading {    font-size: 20px;    line-height: 40px; }
+.row {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+}
 
 /*END Original roi styles */ @media only screen and (max-width: 700px) {    /* Force table to not be like tables anymore */	#rio-table table, 	#rio-table thead, 	#rio-table tbody, 	#rio-table th, 	#rio-table td, 	#rio-table tr { 		display: block; 	} 	/* Hide table headers (but not display: none;, for accessibility) */	#rio-table thead tr { 		position: absolute;		top: -9999px;		left: -9999px;	}  	#rio-table td { 		/* Behave  like a "row" */		border: none;			position: relative;		padding-left: 50%; 		white-space: normal;		text-align:left;	} 	#rio-table td:before { 		/* Now like a table header */		position: absolute;		/* Top/left values mimic padding */		top: 6px;		left: 6px;		width: 45%; 		padding-right: 10px; 		white-space: nowrap;		text-align:left;		font-weight: bold;	} 	/*	Label the data	*/	#rio-table td:before { content: attr(data-title); }}
 
@@ -27,16 +33,17 @@
 
 <div id="roi-table"><form id="ROI" name="ROI">
   <div id="total" class="row" align="center"></div>
+
   <div class="heading">
     <h3>Total employee cost per hour</h3>
   </div>
   <div class="row">
-    <p>Average Hourly Wage for Admin/Filing Staff</p>
-    <input class="form-control-sm" maxlength="10" name="Avg_Hr_wage" size="10" type="number" value="12.00" />
+    <p align="left">Average Hourly Wage for Admin/Filing Staff</p>
+    <input maxlength="10" name="Avg_Hr_wage" size="10" type="number" value="12.00" />
   </div>
   <div class="row">
     <p>Employee Benefit/Burden %</p>
-    <input class="form-control-sm" maxlength="10" name="Emp_benefit" size="10" type="number" value="25" />
+    <input maxlength="10" name="Emp_benefit" size="10" type="number" value="25" />
   </div>
   <div class="row">
     <strong>Total  $</strong>
@@ -49,11 +56,11 @@
   </div>
   <div class="row">
     <p>Number of files added each month</p>
-    <input class="form-control-sm" maxlength="10" name="files_per_month" size="10" type="number" value="1500" />
+    <input maxlength="10" name="files_per_month" size="10" type="number" value="1500" />
   </div>
   <div class="row">
     <p>Time required to prepare and file each (in minutes)</p>
-    <input class="form-control-sm" maxlength="10" name="min_per_file" size="10" type="number" value="2" />
+    <input maxlength="10" name="min_per_file" size="10" type="number" value="2" />
   </div>
   <div class="row">
     <strong>Total  $</strong>
@@ -65,15 +72,15 @@
   </div>
   <div class="row">
     <p>Number of four drawer filing cabinets</p>
-    <input class="form-control-sm" maxlength="10" name="four_drawer_tot" size="10" type="number" value="39" />
+    <input maxlength="10" name="four_drawer_tot" size="10" type="number" value="39" />
   </div>
   <div class="row">
     <p>Square footage required for a single cabinet</p>
-    <input class="form-control-sm" maxlength="10" name="sq_ft_per_cab" size="10" type="number" value="8" />
+    <input maxlength="10" name="sq_ft_per_cab" size="10" type="number" value="8" />
   </div>
   <div class="row">
     <p>Office space lease per square foot</p>
-    <input class="form-control-sm" maxlength="10" name="sq_ft_cost" size="10" type="number" value="2.00" />
+    <input maxlength="10" name="sq_ft_cost" size="10" type="number" value="2.00" />
   </div>
   <div class="row">
     <p>Total rental cost for on-site file storage</p>
@@ -81,7 +88,7 @@
   </div>
   <div class="row">
     <p>Total rental cost for OFF-site file storage</p>
-    <input class="form-control-sm" name="off_site_cost" size="10" type="number" value="" />
+    <input name="off_site_cost" size="10" type="number" value="" />
   </div>
   <div class="row">
     <strong>Total  $</strong>
@@ -93,19 +100,19 @@
   </div>
   <div class="row">
     <p>Number of people who retrieve documents</p>
-    <input class="form-control-sm" name="total_people" size="10" type="number" value="5" />
+    <input name="total_people" size="10" type="number" value="5" />
   </div>
   <div class="row">
     <p>Average # of documents retrieved per person, per day</p>
-    <input class="form-control-sm" name="total_docs_per_day" size="10" type="number" value="5" />
+    <input name="total_docs_per_day" size="10" type="number" value="5" />
   </div>
   <div class="row">
     <p>Average time to retrieve each document, in minutes</p>
-    <input class="form-control-sm" name="total_min_per_doc" size="10" type="number" value="3" />
+    <input name="total_min_per_doc" size="10" type="number" value="3" />
   </div>
   <div class="row">
     <p>Average workdays per month</p>
-    <input class="form-control-sm" name="total_days_per_mo" size="10" type="number" value="20" />
+    <input name="total_days_per_mo" size="10" type="number" value="20" />
   </div>
   <div class="row">
     <p>Average labor cost per minute</p>
@@ -121,11 +128,11 @@
   </div>
   <div class="row">
     <p>Average number of mis-filed documents per month</p>
-    <input class="form-control-sm" name="mis_filed_docs_per_mo" size="10" type="number" value="2" />
+    <input name="mis_filed_docs_per_mo" size="10" type="number" value="2" />
   </div>
   <div class="row">
     <p>Average time to find a mis-filed document (in minutes)</p>
-    <input class="form-control-sm" name="mis_filed_doc_min_find" size="10" type="number" value="15" />
+    <input name="mis_filed_doc_min_find" size="10" type="number" value="15" />
   </div>
   <div class="row">
     <p>Average labor cost per minute</p>
@@ -141,11 +148,11 @@
   </div>
   <div class="row">
     <p>Number of documents faxed out daily</p>
-    <input class="form-control-sm" name="faxes_daily" size="10" type="number" value="5" />
+    <input name="faxes_daily" size="10" type="number" value="5" />
   </div>
   <div class="row">
     <p>Average time taken to fax each document, in minutes</p>
-    <input class="form-control-sm" name="minutes_to_fax" size="10" type="number" value="2" />
+    <input name="minutes_to_fax" size="10" type="number" value="2" />
   </div>
   <div class="row">
     <p>Average labor cost per minute</p>
@@ -165,7 +172,7 @@
   </div>
   <div class="row">
     <p>Number of documents sent via Fed Ex or UPS daily</p>
-    <input class="form-control-sm" name="docs_sent_via_courier" size="10" type="number" value="1" />
+    <input name="docs_sent_via_courier" size="10" type="number" value="1" />
   </div>
   <div class="row">
     <p>Average workdays per month</p>
@@ -173,7 +180,7 @@
   </div>
   <div class="row">
     <p>Average cost of UPS/Fed Ex service</p>
-    <input class="form-control-sm" name="courier_cost" size="10" type="number" value="8" />
+    <input name="courier_cost" size="10" type="number" value="8" />
   </div>
   <div class="row">
     <strong>Total  $</strong>
@@ -185,7 +192,7 @@
   </div>
   <div class="row">
     <p>Cost for supplies per 500 files stored per month =$200.00. This is paper, hanging files and manila folders, bankers boxes. Ex 1000 files = 400.00</p>
-    <input class="form-control-sm" name="tot_supply_cost" size="10" type="number" value="200" />
+    <input name="tot_supply_cost" size="10" type="number" value="200" />
   </div>
 
   <div align="center"><input class="btn btn-primary" name="button" type="button" value="Calculate" onclick="all_calcs(this.form)"/></div>
