@@ -1,6 +1,3 @@
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
 <script src="http://www2.scan123.com/scripts/calc_validation.js" language="javascript"></script>
 <script src="http://www2.scan123.com/scripts/all_calcs_ob.js" language="javascript"></script>
 
@@ -28,203 +25,173 @@
 
 <link rel="stylesheet" href="scan123_roi_css.css">
 
-<div class="container">
+<div id="roi-table"><form id="ROI" name="ROI">
+  <div id="total" class="row" align="center"></div>
+  <div class="heading">
+    <h3>Total employee cost per hour</h3>
+  </div>
   <div class="row">
-  <div id="roi-table"><form id="ROI" name="ROI">
-    <table class="table table-condensed">
-      <tbody>
-      <tr>
-        <td>
-        <div id="total" align="center"></div></td>
-      </tr>
-      <tr>
-        <td class="heading">Total employee cost per hour</td>
-      </tr>
-      <tr>
-        <td align="right" nowrap="nowrap">Average Hourly Wage for Admin/Filing Staff</td>
-        <td> <input class="form-control-sm" maxlength="10" name="Avg_Hr_wage" size="10" type="text" value="12.00" /></td>
-      </tr>
-      <tr>
-        <td align="right">Employee Benefit/Burden %</td>
-        <td> <input class="form-control-sm" maxlength="10" name="Emp_benefit" size="10" type="text" value="25" /></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_tot_emp_cost_hr"></div>
-        <div id="this_tot_emp_cost_min"></div></td>
-      </tr>
-      <tr>
-        <td class="heading">Monthly cost to file new documents</td>
-      </tr>
-      <tr>
-        <td align="right">Number of files added each month:</td>
-        <td> <input class="form-control-sm" maxlength="10" name="files_per_month" size="10" type="text" value="1500" /></td>
-      </tr>
-      <tr>
-        <td align="right" nowrap="nowrap">Time required to prepare and file each (in minutes)</td>
-        <td> <input class="form-control-sm" maxlength="10" name="min_per_file" size="10" type="text" value="2" /></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_cost_to_file"></div></td>
-      </tr>
-      <tr>
-        <td class="heading" colspan="2">Monthly cost of storing old files</td>
-      </tr>
-      <tr>
-        <td align="right">Number of four drawer filing cabinets</td>
-        <td> <input class="form-control-sm" maxlength="10" name="four_drawer_tot" size="10" type="text" value="39" /></td>
-      </tr>
-      <tr>
-        <td align="right">Square footage required for a single cabinet</td>
-        <td> <input class="form-control-sm" maxlength="10" name="sq_ft_per_cab" size="10" type="text" value="8" /></td>
-      </tr>
-      <tr>
-        <td align="right">Office space lease per square foot $</td>
-        <td> <input class="form-control-sm" maxlength="10" name="sq_ft_cost" size="10" type="text" value="2.00" /></td>
-      </tr>
-      <tr>
-        <td align="right">Total rental cost for on-site file storage</td>
-        <td>
-        <div id="this_on_site_cost"></div></td>
-      </tr>
-      <tr>
-        <td align="right">Total rental cost for OFF-site file storage $</td>
-        <td> <input class="form-control-sm" name="off_site_cost" size="10" type="text" value="" /></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_tot_storage_cost"></div></td>
-      </tr>
-      <tr>
-        <td class="heading" colspan="2">Monthly cost to retrieve documents</td>
-      </tr>
-      <tr>
-        <td align="right">Number of people who retrieve documents</td>
-        <td> <input class="form-control-sm" name="total_people" size="10" type="text" value="5" /></td>
-      </tr>
-      <tr>
-        <td align="right" nowrap="nowrap">Average # of documents retrieved per person, per day</td>
-        <td> <input class="form-control-sm" name="total_docs_per_day" size="10" type="text" value="5" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average time to retrieve each document, in minutes</td>
-        <td> <input class="form-control-sm" name="total_min_per_doc" size="10" type="text" value="3" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average workdays per month</td>
-        <td> <input class="form-control-sm" name="total_days_per_mo" size="10" type="text" value="20" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average labor cost per minute $</td>
-        <td>
-        <div id="this_tot_emp_cost_min2"></div></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_tot_mo_cost_retrieve"></div></td>
-      </tr>
-      <tr>
-        <td class="heading" colspan="2">Monthly cost to find mis-filed/mis-labeled documents</td>
-      </tr>
-      <tr>
-        <td align="right">Average number of mis-filed documents per month</td>
-        <td> <input class="form-control-sm" name="mis_filed_docs_per_mo" size="10" type="text" value="2" /></td>
-      </tr>
-      <tr>
-        <td align="right" nowrap="nowrap">Average time to find a mis-filed document (in minutes)</td>
-        <td> <input class="form-control-sm" name="mis_filed_doc_min_find" size="10" type="text" value="15" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average labor cost per minute $</td>
-        <td>
-        <div id="this_tot_emp_cost_min3"></div></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_tot_mo_cost_from_misfile"></div></td>
-      </tr>
-      <tr>
-        <td class="heading" colspan="2">Monthly fax costs</td>
-      </tr>
-      <tr>
-        <td align="right">Number of documents faxed out daily</td>
-        <td> <input class="form-control-sm" name="faxes_daily" size="10" type="text" value="5" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average time taken to fax each document, in minutes</td>
-        <td> <input class="form-control-sm" name="minutes_to_fax" size="10" type="text" value="2" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average labor cost per minute $</td>
-        <td>
-        <div id="this_tot_emp_cost_min4"></div></td>
-      </tr>
-      <tr>
-        <td align="right">Average workdays per month</td>
-        <td>
-        <div id="this_total_days_per_mo2"></div></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_tot_mo_fax_cost"></div></td>
-      </tr>
-      <tr>
-        <td class="heading" colspan="2">Monthly courier costs</td>
-      </tr>
-      <tr>
-        <td align="right">Number of documents sent via Fed Ex or UPS daily</td>
-        <td> <input class="form-control-sm" name="docs_sent_via_courier" size="10" type="text" value="1" /></td>
-      </tr>
-      <tr>
-        <td align="right">Average workdays per month</td>
-        <td>
-        <div id="this_total_days_per_mo3"></div></td>
-      </tr>
-      <tr>
-        <td align="right">Average cost of UPS/Fed Ex service $</td>
-        <td> <input class="form-control-sm" name="courier_cost" size="10" type="text" value="8" /></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td>
-        <div id="this_tot_courier_cost"></div></td>
-      </tr>
-      <tr>
-        <td class="heading" colspan="2">Monthly cost for supplies</td>
-      </tr>
-      <tr>
-        <td align="right">Cost for supplies per 500 files stored per month =$200.00. This is paper, hanging files and manila folders, bankers boxes. Ex 1000 files = 400.00</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-        <div align="right"><strong>Total $</strong></div></td>
-        <td> <input class="form-control-sm" name="tot_supply_cost" size="10" type="text" value="200" /></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-        <div align="center"><input class="btn btn-primary" name="button" type="button" value="Calculate" onclick="all_calcs(this.form)"/></div></td>
-      </tr>
-      <tr>
-        <td colspan="2">
-        <div id="total2" align="center"></div></td>
-      </tr>
-    </tbody>
-  </table>
+    <p>Average Hourly Wage for Admin/Filing Staff</p>
+    <input class="form-control-sm" maxlength="10" name="Avg_Hr_wage" size="10" type="number" value="12.00" />
+  </div>
+  <div class="row">
+    <p>Employee Benefit/Burden %</p>
+    <input class="form-control-sm" maxlength="10" name="Emp_benefit" size="10" type="number" value="25" />
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_tot_emp_cost_hr"></p>
+    <p id="this_tot_emp_cost_min"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly cost to file new documents</h3>
+  </div>
+  <div class="row">
+    <p>Number of files added each month</p>
+    <input class="form-control-sm" maxlength="10" name="files_per_month" size="10" type="number" value="1500" />
+  </div>
+  <div class="row">
+    <p>Time required to prepare and file each (in minutes)</p>
+    <input class="form-control-sm" maxlength="10" name="min_per_file" size="10" type="number" value="2" />
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_cost_to_file"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly cost of storing old files</h3>
+  </div>
+  <div class="row">
+    <p>Number of four drawer filing cabinets</p>
+    <input class="form-control-sm" maxlength="10" name="four_drawer_tot" size="10" type="number" value="39" />
+  </div>
+  <div class="row">
+    <p>Square footage required for a single cabinet</p>
+    <input class="form-control-sm" maxlength="10" name="sq_ft_per_cab" size="10" type="number" value="8" />
+  </div>
+  <div class="row">
+    <p>Office space lease per square foot</p>
+    <input class="form-control-sm" maxlength="10" name="sq_ft_cost" size="10" type="number" value="2.00" />
+  </div>
+  <div class="row">
+    <p>Total rental cost for on-site file storage</p>
+    <p id="this_on_site_cost"></p>
+  </div>
+  <div class="row">
+    <p>Total rental cost for OFF-site file storage</p>
+    <input class="form-control-sm" name="off_site_cost" size="10" type="number" value="" />
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_tot_storage_cost"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly cost to retrieve documents</h3>
+  </div>
+  <div class="row">
+    <p>Number of people who retrieve documents</p>
+    <input class="form-control-sm" name="total_people" size="10" type="number" value="5" />
+  </div>
+  <div class="row">
+    <p>Average # of documents retrieved per person, per day</p>
+    <input class="form-control-sm" name="total_docs_per_day" size="10" type="number" value="5" />
+  </div>
+  <div class="row">
+    <p>Average time to retrieve each document, in minutes</p>
+    <input class="form-control-sm" name="total_min_per_doc" size="10" type="number" value="3" />
+  </div>
+  <div class="row">
+    <p>Average workdays per month</p>
+    <input class="form-control-sm" name="total_days_per_mo" size="10" type="number" value="20" />
+  </div>
+  <div class="row">
+    <p>Average labor cost per minute</p>
+    <p id="this_tot_emp_cost_min2"></p>
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_tot_mo_cost_retrieve"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly cost to find mis-filed/mis-labeled documents</h3>
+  </div>
+  <div class="row">
+    <p>Average number of mis-filed documents per month</p>
+    <input class="form-control-sm" name="mis_filed_docs_per_mo" size="10" type="number" value="2" />
+  </div>
+  <div class="row">
+    <p>Average time to find a mis-filed document (in minutes)</p>
+    <input class="form-control-sm" name="mis_filed_doc_min_find" size="10" type="number" value="15" />
+  </div>
+  <div class="row">
+    <p>Average labor cost per minute</p>
+    <p id="this_tot_emp_cost_min3"></p>
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_tot_mo_cost_from_misfile"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly fax costs</h3>
+  </div>
+  <div class="row">
+    <p>Number of documents faxed out daily</p>
+    <input class="form-control-sm" name="faxes_daily" size="10" type="number" value="5" />
+  </div>
+  <div class="row">
+    <p>Average time taken to fax each document, in minutes</p>
+    <input class="form-control-sm" name="minutes_to_fax" size="10" type="number" value="2" />
+  </div>
+  <div class="row">
+    <p>Average labor cost per minute</p>
+    <p id="this_tot_emp_cost_min4"></p>
+  </div>
+  <div class="row">
+    <p>Average workdays per month</p>
+    <p id="this_total_days_per_mo2">20</p>
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_tot_mo_fax_cost"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly courier costs</h3>
+  </div>
+  <div class="row">
+    <p>Number of documents sent via Fed Ex or UPS daily</p>
+    <input class="form-control-sm" name="docs_sent_via_courier" size="10" type="number" value="1" />
+  </div>
+  <div class="row">
+    <p>Average workdays per month</p>
+    <p id="this_total_days_per_mo3">20</p>
+  </div>
+  <div class="row">
+    <p>Average cost of UPS/Fed Ex service</p>
+    <input class="form-control-sm" name="courier_cost" size="10" type="number" value="8" />
+  </div>
+  <div class="row">
+    <strong>Total  $</strong>
+    <p id="this_tot_courier_cost"></p>
+  </div>
+
+  <div class="heading">
+    <h3>Monthly cost for supplies</h3>
+  </div>
+  <div class="row">
+    <p>Cost for supplies per 500 files stored per month =$200.00. This is paper, hanging files and manila folders, bankers boxes. Ex 1000 files = 400.00</p>
+    <input class="form-control-sm" name="tot_supply_cost" size="10" type="number" value="200" />
+  </div>
+
+  <div align="center"><input class="btn btn-primary" name="button" type="button" value="Calculate" onclick="all_calcs(this.form)"/></div>
+
+  <div id="total2" align="center"></div>
+
 </form><!--- // end roi-table -->
 
 </div>
