@@ -3,59 +3,60 @@
 <style>
   .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: row contactRow;
     justify-content: space-between;
   }
 </style>
 
 
-<div id="crmWebToEntityForm" style="width: 500px; margin: 2px;">
-  <form accept-charset="UTF-8" action="https://crm.zoho.com/crm/WebToLeadForm" method="POST" name="WebToLeads1630098000010072057">
+<div id="crmWebToEntityForm" style="margin: 2px;">
+  <form accept-charset="UTF-8" action="https://crm.zoho.com/crm/WebToLeadForm" method="POST" name="WebToLeads1630098000010072057" class="heading1">
     <input style="display: none;" name="xnQsjsdp" type="text" value="c39b2ff99354e16625c8050b5852f151ec1ea4ed4c208b53162ca85df637e262" />
     <input id="zc_gad" name="zc_gad" type="hidden" value="" />
     <input style="display: none;" name="xmIwtLD" type="text" value="839370f03170892c46a7d2c62b40f50f2bdb1b027903485d52560bcba0059e6a" />
     <input style="display: none;" name="actionType" type="text" value="TGVhZHM=" />
     <input style="display: none;" name="returnURL" type="text" value="http://www2.scan123.com/contact-us/" />
 
-  <h4>Contact Scan123 Here:</h4>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 250px;" >Company</p>
-    <input style="width: 250px;" maxlength="100" name="Company" type="text" required/>
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;" >Company</p>
+    <input maxlength="100" name="Company" type="text" required/>
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 250px;" >First Name</p>
-    <input style="width: 250px;" maxlength="40" name="First Name" type="text" required/>
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;" >First Name</p>
+    <input maxlength="40" name="First Name" type="text" required/>
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 150px;" >Last Name</p>
-    <input style="width: 250px;" maxlength="80" name="Last Name" type="text" required/>
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;" >Last Name</p>
+    <input maxlength="80" n`ame="Last Name" type="text" required/>
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 150px;">Email</p>
-    <input style="width: 250px;" maxlength="100" name="Email" type="text" required/>
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;">Email</p>
+    <input maxlength="100" name="Email" type="text" required/>
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 250px;" required>Contact Reason</p>
-    <select style="width: 250px;" name="LEADCF19">
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;" required>Contact Reason</p>
+    <select name="LEADCF19">
       <option value="Send me Scan123 referrals">Send me Scan123 referrals</option>
       <option value="Request a free demo">Request a free demo</option>
       <option value="Request a free quote">Request a free quote</option>
       <option value="Other">Other</option>
     </select>
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 150px;">Zip Code</p>
-    <input style="width: 250px;" maxlength="30" name="Zip Code" type="text" />
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;">Zip Code</p>
+    <input maxlength="30" name="Zip Code" type="text" />
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 150px;">Phone</p>
-    <input style="width: 250px;" maxlength="30" name="Phone" type="text" />
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;">Phone</p>
+    <input maxlength="30" name="Phone" type="text" />
   </div>
-  <div class="row">
-    <p style="nowrap: nowrap; width: 250px;">Description</p>
-    <textarea style="width: 250px;" maxlength="2000" name="Description">&nbsp;</textarea>
+  <div class="row contactRow">
+    <p style="nowrap: nowrap;">Description</p>
+    <textarea rows="20" maxlength="2000" name="Description">&nbsp;</textarea>
   </div>
-  <input class="btn" style="font-size: 17px; color: #ffffff;" type="submit" value="Submit" />
+  <div align="center">
+    <input class="btn" style="font-size: 17px; color: #ffffff;" type="submit" value="Submit" />
+  </div>
   <select style="display: none;" name="LEADCF28">
     <option selected="selected" value="Internet Lead">-</option>
   </select>
