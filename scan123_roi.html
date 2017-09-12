@@ -2,14 +2,15 @@
 <script src="http://gracie1.scan123.com/wp-content/scripts/calc_validation.js" language="javascript"></script>
 
 <style>/*Original roi styles */
-#total {    font-size: 20px;    color: red;}
-#total2 {    font-size: 20px;    color: red;}
+#total,
+#total2,
+#total3 {    font-size: 20px;    color: red;}
 #this_tot_emp_cost_hr,
 #this_tot_emp_cost_min,
 #this_tot_emp_cost_min2,
 #this_cost_to_file,
 #this_on_site_cost,
-#this_tot_storage_cost {    color: red;}
+#this_tot_storage_cost,
 #this_tot_mo_cost_retrieve,
 #this_tot_mo_cost_from_misfile,
 #this_tot_mo_fax_cost,
@@ -192,6 +193,7 @@
   <div align="center"><input class="btn" name="button" type="button" value="Calculate" onclick="all_calcs(this.form)"/></div>
 
   <div id="total2" align="center"></div>
+  <div id="total3" align="center"></div>
 
 </form><!--- // end roi-table -->
 
